@@ -4,7 +4,6 @@
 #include <vector>
 
 using namespace std;
-using namespace std::literals;
 
 int main(int argc, char **args)
 {
@@ -12,18 +11,18 @@ int main(int argc, char **args)
     cerr << "Generate " << (large ? "large" : "small") << " input." << endl;
 
     auto a = 1, b = 2;
-    auto s = "test"s;
+    auto s = string{"test"};
     auto K = 3;
     auto X = vector<int>{(int)-1e9, 0, (int)1e9};
     auto H = 3;
     auto W = 11;
-    auto board = vector<string>{
-        "#.#.#.#.#.#"s,
-        ".#.#.#.#.#."s,
-        "#.#.#.#.#.#"s,
-    };
+    auto board = vector<string>{};
     auto N = (int)1e5;
     auto M = (large ? (int)2e5 : 10);
+
+    board.push_back(string{"#.#.#.#.#.#"});
+    board.push_back(string{".#.#.#.#.#."});
+    board.push_back(string{"#.#.#.#.#.#"});
 
     // checksum
     auto c = (a ^ b ^ s[0] ^ X[2] ^ board[H - 1][W - 1] ^ N ^ M ^ M ^ (M * (int)1e4)) % 128;

@@ -1,3 +1,5 @@
 #!/bin/bash
 
-g++ --std=c++17 -O3 main.cpp
+set -xeu
+
+g++ --std=c++1y -O3 -Wall ./main.cpp
