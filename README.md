@@ -1,5 +1,7 @@
 # Scan Benchs
 
+[![Build Status](https://travis-ci.org/vain0x/scan-bench.svg?branch=master)](https://travis-ci.org/vain0x/scan-bench)
+
 ## Input
 
 ```
