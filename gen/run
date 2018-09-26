@@ -1,0 +1,5 @@
+#!/bin/bash
+
+set -xeu
+
+g++ --std=c++17 gen.cpp && ./a.out "$@"

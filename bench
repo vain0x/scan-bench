@@ -1,0 +1,27 @@
+#!/bin/bash
+
+set -xeu
+
+generate_input () {
+    if [[ ! -f ./small.txt ]]
+    then
+        g++ --std=c++17 -o ./gen/a.out ./gen/gen.cpp
+        ./gen/a.out > ./small.txt
+        ./gen/a.out --large > ./large.txt
+    fi
+}
+
+build () {
+    (cd ./cin1; ./build)
+    (cd ./scan1; cargo build --release)
+}
+
+run () {
+    time (cat "$1" | ./cin1/a.out)
+    time (cat "$1" | ./scan1/target/release/scan1)
+}
+
+generate_input
+build
+run './small.txt'
+run './large.txt'
