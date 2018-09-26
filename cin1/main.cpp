@@ -12,6 +12,9 @@ long long w[200001];
 
 int main()
 {
+    ios_base::sync_with_stdio(false);
+    cin.tie(nullptr);
+
     int a, b, c, K, H, W, N, M;
 
     cin >> a >> b >> c >> s >> K;
@@ -33,7 +36,8 @@ int main()
     }
 
     auto check = (a ^ b ^ s[0] ^ X[K - 1] ^ board[H - 1][W - 1] ^ N ^ u[M - 1] ^ v[M - 1] ^ w[M - 1]) % 128 ^ c;
-    if (check != 0) {
+    if (check != 0)
+    {
         cerr << "WA " << check << endl;
         return 1;
     }
