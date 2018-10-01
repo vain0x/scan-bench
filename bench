@@ -3,6 +3,7 @@
 set -xeu
 
 run () {
+    time (cat "$1" | ./c-scanf1/a.out)
     time (cat "$1" | ./cin1/a.out)
     time (cat "$1" | ./scan1/target/release/scan1)
 }
