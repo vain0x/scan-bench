@@ -1,0 +1,7 @@
+#!/bin/bash
+
+set -xeu
+
+g++ -std=c++1y -O2 -Wall -o ./gen/a.out ./gen/gen.cpp
+./gen/a.out > ./small.txt
+./gen/a.out --large > ./large.txt
