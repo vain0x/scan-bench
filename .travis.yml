@@ -1,15 +1,23 @@
-language: rust
-rust:
-- stable
-script:
-- ./build
-after_success:
-- ./run ./large.txt $BIN
+before_script:
+- ./run-gen
 matrix:
   include:
   - name: c-scanf1
-    env: BIN=./c-scanf1/a.out
+    language: cpp
+    script:
+    - (cd ./c-scanf1; ./build)
+    after_success:
+    - ./run ./large.txt ./c-scanf1/a.out
   - name: cin1
-    env: BIN=./cin1/a.out
+    language: cpp
+    script:
+    - (cd ./cin1; ./build)
+    after_success:
+    - ./run ./large.txt ./cin1/a.out
   - name: scan1
-    env: BIN=./scan1/target/release/scan1
+    language: rust
+    rust: stable
+    script:
+    - (cd ./scan1; cargo build --release)
+    after_success:
+    - ./run ./large.txt ./scan1/target/release/scan1
