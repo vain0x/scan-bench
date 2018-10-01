@@ -1,0 +1,5 @@
+#!/bin/bash
+
+set -xeu
+
+gcc -std=c11 -Wno-unused-result -O3 ./main.c

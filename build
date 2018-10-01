@@ -9,6 +9,7 @@ generate_input () {
 }
 
 build () {
+    (cd ./c-scanf1; ./build)
     (cd ./cin1; ./build)
     (cd ./scan1; cargo build --release)
 }

@@ -2,13 +2,15 @@ language: rust
 rust:
 - stable
 before_script:
-- chmod +x ./cin1/build ./build ./run
+- chmod +x ./c-scanf1/build ./cin1/build ./build ./run
 script:
 - ./build
 after_success:
 - ./run ./large.txt $BIN
 matrix:
   include:
+  - name: c-scanf1
+    env: BIN=./c-scanf1/a.out
   - name: cin1
     env: BIN=./cin1/a.out
   - name: scan1
