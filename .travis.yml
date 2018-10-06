@@ -21,3 +21,10 @@ matrix:
     - (cd ./scan1; cargo build --release)
     after_success:
     - ./run ./large.txt ./scan1/target/release/scan1
+  - name: rust-read1
+    language: rust
+    rust: stable
+    script:
+    - (cd ./rust-read1; cargo build --release)
+    after_success:
+    - ./run ./large.txt ./rust-read1/target/release/rust-read1
