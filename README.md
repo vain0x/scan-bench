@@ -21,7 +21,7 @@ u2 v2 w2
 uM vM wM
 ```
 
-### Constraints
+### Input: Constraints
 
 - 1 ≤ a ≤ 100
 - 1 ≤ b, c ≤ 1000
@@ -37,7 +37,27 @@ uM vM wM
 - 1 ≤ ui, vi ≤ N (for 1 ≤ i ≤ M)
 - 1 ≤ wi ≤ 10^9
 
-## Notes
+Notes:
 
 - First three lines are from [A - Welcome to AtCoder](https://beta.atcoder.jp/contests/practice/tasks/practice_1?lang=en).
-    - ([日本語版](https://beta.atcoder.jp/contests/practice/tasks/practice_1?lang=ja))
+
+## Codes
+
+- `c-scanf1`
+    - C
+    - `scanf` from `<stdio.h>`.
+- `cin1`
+    - C++
+    - `std::cin` with `sync_with_stdio(false)` and `tie(nullptr)` enabled
+- `rust-read1`
+    - Rust
+    - Original `read!` macro (slow)
+        - Non-buffered
+        - Mutex lock per `read!` invocation
+        - Temporary buffer per line
+- `scan1`
+    - Rust
+    - Original `scan!` macro (fast)
+        - Buffered
+        - Single mutex lock
+        - Single temporary buffer
