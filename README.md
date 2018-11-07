@@ -43,21 +43,22 @@ Notes:
 
 ## Codes
 
-- `c-scanf1`
-    - C
-    - `scanf` from `<stdio.h>`.
-- `cin1`
-    - C++
-    - `std::cin` with `sync_with_stdio(false)` and `tie(nullptr)` enabled
-- `rust-read1`
-    - Rust
+- 📁 c-scanf1
+    - 🌐 C
+    - `scanf` from `<stdio.h>`
+- 📁 cin1
+    - 🌐 C++
+    - `std::cin` from `<iostream>`
+        - ✔ `sync_with_stdio(false)` and `tie(nullptr)`
+- 📁 rust-read1
+    - 🌐 Rust
     - Original `read!` macro (slow)
-        - Non-buffered
-        - Mutex lock per `read!` invocation
-        - Temporary buffer per line
-- `scan1`
-    - Rust
+        - ✘ Mutex lock per `read!` invocation
+        - ✘ Temporary buffer per line
+        - ✔ Short definition
+- 📁 scan1
+    - 🌐 Rust
     - Original `scan!` macro (fast)
-        - Buffered
-        - Single mutex lock
-        - Single temporary buffer
+        - ✔ Single mutex lock
+        - ✔ Single temporary buffer
+        - ✘ Verbose definition

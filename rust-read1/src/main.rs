@@ -33,7 +33,7 @@ fn main() {
     let (h, w) = read!(usize, usize);
     let board = read![String; h];
     let (n, m) = read!(usize, usize);
-    let edges = read![usize,usize,i64; m];
+    let edges = read![usize, usize, i64; m];
 
     let check = ((a ^ b) as i64
         ^ s.as_bytes()[0] as i64
